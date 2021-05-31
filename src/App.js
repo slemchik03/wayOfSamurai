@@ -1,12 +1,14 @@
-import './App.css';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Profile from './components/Profile';
+import './reset.css'
+import classes from './App.module.css';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile';
+
 
 
 const App = () => {
   return (
-    <div className="app-wrapper">
+    <div className={classes['app-wrapper']}>
       <Header />
       <Navbar />
       <Profile />

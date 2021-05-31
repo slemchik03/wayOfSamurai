@@ -1,0 +1,27 @@
+.header {
+    grid-area: h;
+    background-color: #2ecc71;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: flex-start;
+   
+}
+.wrapper a {
+    text-decoration: none;
+}
+.wrapper img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.wrapper h1 {
+    text-align: center;
+    padding-top: 15px;
+    color: #ffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}

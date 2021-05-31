@@ -1,0 +1,13 @@
+.nav {
+    grid-area: n;
+}
+ul {
+    background-color: #3498db;
+    padding: 5px;
+    min-height: 500px;
+}
+li {
+    font-size: 17px;
+    color: #ffff;
+    font-family: 'Courier New', Courier, monospace;
+}
