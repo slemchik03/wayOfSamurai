@@ -3,7 +3,7 @@ import React from "react";
 
 const Dialogs = props => {
     return (
-        <div className={classes.dialogsWrapper}>
+        <div>
             Dialogs
         </div>
     )

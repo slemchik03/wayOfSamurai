@@ -7,5 +7,13 @@
     grid-template-areas:
     "h h"
     "n c";
-    grid-template-columns: minmax(300px) minmax(900px);
+    grid-template-columns: 300px 900px;
 }
+
+.content {
+    grid-area: c;
+    margin-left: 10px;
+    padding: 5px;
+    min-height: 500px;
+}
+

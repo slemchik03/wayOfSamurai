@@ -2,7 +2,7 @@ import MyPosts from './MyPosts/MyPosts'
 import classes from './Profile.module.css'
 const Profile = () => {
     return (
-        <div className={classes.profileWrapper} >
+        <div>
 
             <div className={classes.personInfo}>
                 <img src="https://www.meme-arsenal.com/memes/0b37d82bcfd11cb3196fa5329f3bff0f.jpg" alt="ava" />
