@@ -11,3 +11,7 @@ li {
     color: #ffff;
     font-family: 'Courier New', Courier, monospace;
 }
+
+.active {
+    color: gold;
+}

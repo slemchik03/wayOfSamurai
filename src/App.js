@@ -6,10 +6,9 @@ import Profile from './components/Profile/Profile';
 import Dialogs from "./components/Dialogs/Dialogs";
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
+
 
 
 const App = () => {
@@ -20,8 +19,8 @@ const App = () => {
                 <Navbar/>
                 <div className={'content'}>
                     <Route path={'/profile'} component={Profile}/>
-                    <Route path={'/message'} component={Dialogs}/>
-                </div>
+                    <Route path={'/dialogs'} component={Dialogs}/>
+            </div>
             </div>
         </Router>
     )

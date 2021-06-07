@@ -1,31 +1,32 @@
 import classes from './Navbar.module.css'
 import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+	NavLink
 } from "react-router-dom";
 
 
 const Navbar = () => {
-	return (
-		<div className={classes.nav}>
-			<ul>
-				<li>
-					<Link to={'/profile'} >Profile</Link>
-				</li>
-				<li>
-					<Link to={'/message'} >Message</Link>
-				</li>
-				<li>
-					<Link to={'/music'} >Music</Link>
-				</li>
-				<li>
-					<Link to={'/other'} >Other</Link>
-				</li>
-			</ul>
-		</div>
-	)
+    return (
+        <div className={classes.nav}>
+            <ul>
+                <li>
+                    <NavLink to={'/profile'} activeStyle={{color: 'gold'}}>Profile</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/dialogs'} activeStyle={{color: 'gold'}}>Message</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/music'} activeStyle={{color: 'gold'}}>Music</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/other'} activeStyle={{color: 'gold'}}>Other</NavLink>
+                </li>
+            </ul>
+        </div>
+    )
 }
 
 export default Navbar
