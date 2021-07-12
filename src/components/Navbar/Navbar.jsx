@@ -4,11 +4,12 @@ import {
     Switch,
     Route,
     Link,
-	NavLink
+    NavLink
 } from "react-router-dom";
+import React from "react";
 
 
-const Navbar = () => {
+const Navbar = props => {
     return (
         <div className={classes.nav}>
             <ul>
@@ -20,6 +21,12 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink to={'/music'} activeStyle={{color: 'gold'}}>Music</NavLink>
+                </li>
+                <li>
+                    <strong>Friends online:</strong>
+                    <div className={classes.friends}>
+                        {props.friends.map(v => <NavLink to={`/dialogs/${v.name}`}><p>{v.name}</p></NavLink>)}
+                    </div>
                 </li>
                 <li>
                     <NavLink to={'/other'} activeStyle={{color: 'gold'}}>Other</NavLink>

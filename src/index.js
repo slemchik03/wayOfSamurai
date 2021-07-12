@@ -1,16 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './reset.css';
 import './index.css';
+import Store from "./redux/state";
+import ReactDOM from "react-dom";
+import {BrowserRouter} from "react-router-dom";
+import App from "./App";
+import React from "react";
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+const store = new Store()
 
+const reloadState = () => {
+    ReactDOM.render(
+        <BrowserRouter>
+            <App store={store}/>
+        </BrowserRouter>
+        ,
+        document.querySelector('#root')
+    )
 
+}
 
-ReactDOM.render(
-    <App />,
-    document.querySelector('#root')
-)
+store.setRender = reloadState
 
-reportWebVitals();
+reloadState()

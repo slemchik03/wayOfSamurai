@@ -1,6 +1,6 @@
-.dialogs{
+.dialogs {
     display: grid;
-    grid-template-columns: 100px 300px;
+    grid-template-columns: 100px 900px;
 }
 
 .dialogsItems {
@@ -15,12 +15,22 @@
 
 .messages {
     padding: 10px;
+    width: 500px;
 }
 
-.messages .message {
-    background: #3fd720;
+.message {
     padding: 5px;
     margin: 10px 0;
+}
+
+.message p {
+    background: #df5c5c;
+    padding: 5px;
+}
+
+.message textarea {
+    resize: vertical;
+    margin: 20px 0;
 }
 
 .active {

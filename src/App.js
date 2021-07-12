@@ -4,28 +4,24 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Dialogs from "./components/Dialogs/Dialogs";
-import {
-    BrowserRouter as Router,
-    Route
-} from "react-router-dom";
+import {Route} from "react-router-dom";
 
+const App = (props) => {
 
-
-const App = () => {
     return (
-        <Router>
-            <div className={'app-wrapper'}>
-                <Header/>
-                <Navbar/>
-                <div className={'content'}>
-                    <Route path={'/profile'} component={Profile}/>
-                    <Route path={'/dialogs'} component={Dialogs}/>
+        <div className={'app-wrapper'}>
+            <Header/>
+            <Navbar friends={props.store.getDialogs.friends}/>
+            <div className={'content'}>
+                <Route path={'/profile'} render={() => <Profile store={props.store}  />}/>
+
+                <Route path={'/dialogs'} render={() =>
+                    <Dialogs message={props.store.getDialogs.messages} friends={props.store.getDialogs.friends}/>}
+                />
             </div>
-            </div>
-        </Router>
+        </div>
     )
 
 }
-
 
 export default App;

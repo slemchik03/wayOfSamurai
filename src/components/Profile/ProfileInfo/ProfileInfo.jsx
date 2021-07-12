@@ -8,10 +8,10 @@ const ProfileInfo = (props) => {
                 <h2>Vadim Savin</h2>
 
                 <div className={classes.aboutPerson}>
-                    <p>Age:</p>
-                    <p>Work:</p>
-                    <p>Family status:</p>
-                    <p>Phone number:</p>
+                    <p>Age: 15</p>
+                    <p>Work: none</p>
+                    <p>Family status: no married</p>
+                    <p>Phone number: 7777</p>
                 </div>
             </div>
         </div>
