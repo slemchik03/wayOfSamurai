@@ -1,20 +1,8 @@
 import classes from './MyPosts.module.css'
 import Post from './Posts/Post'
 import React from "react";
+import {addPostCreateAction, changeAreaCreateAction} from "../../../redux/state";
 
-
-const addPostCreateAction = () => {
-    return {
-        type: 'ADD-POST'
-    }
-}
-
-const changeAreaCreateAction = (text) => {
-    return {
-        type: 'CHANGE-POST-VALUE',
-        message: text
-    }
-}
 
 export default function MyPosts(props) {
     const textAreaRef = React.createRef()

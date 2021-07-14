@@ -23,12 +23,6 @@ const Navbar = props => {
                     <NavLink to={'/music'} activeStyle={{color: 'gold'}}>Music</NavLink>
                 </li>
                 <li>
-                    <strong>Friends online:</strong>
-                    <div className={classes.friends}>
-                        {props.friends.map(v => <NavLink to={`/dialogs/${v.name}`}><p>{v.name}</p></NavLink>)}
-                    </div>
-                </li>
-                <li>
                     <NavLink to={'/other'} activeStyle={{color: 'gold'}}>Other</NavLink>
                 </li>
             </ul>

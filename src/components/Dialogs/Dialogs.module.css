@@ -23,10 +23,6 @@
     margin: 10px 0;
 }
 
-.message p {
-    background: #df5c5c;
-    padding: 5px;
-}
 
 .message textarea {
     resize: vertical;
@@ -36,3 +32,4 @@
 .active {
     color: gold;
 }
+

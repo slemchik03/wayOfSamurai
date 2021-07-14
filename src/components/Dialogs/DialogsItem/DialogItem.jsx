@@ -5,7 +5,7 @@ import React from "react";
 const DialogItem = (props) => {
     return (
         <div className={classes.dialog}>
-            <NavLink to={`/dialogs/${props.name}`}>{props.name}</NavLink>
+            <NavLink activeStyle={{color: 'gold'}} to={`/dialogs/${props.id}`}>{props.name}</NavLink>
         </div>
     )
 }

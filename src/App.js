@@ -6,18 +6,21 @@ import Profile from './components/Profile/Profile';
 import Dialogs from "./components/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
 
-const App = (props) => {
 
+const App = (props) => {
+    const store = props.store
+    const friends = props.store.getDialogs.friends
+    const message = props.store.getDialogs.currentMessage
     return (
         <div className={'app-wrapper'}>
             <Header/>
-            <Navbar friends={props.store.getDialogs.friends}/>
+            <Navbar/>
             <div className={'content'}>
-                <Route path={'/profile'} render={() => <Profile store={props.store}  />}/>
-
+                <Route path={'/profile'} render={() => <Profile store={store}/>}/>
                 <Route path={'/dialogs'} render={() =>
-                    <Dialogs message={props.store.getDialogs.messages} friends={props.store.getDialogs.friends}/>}
+                    <Dialogs dispatch={store.dispatch.bind(store)} currentMessage={message} friends={friends}/>}
                 />
+
             </div>
         </div>
     )
