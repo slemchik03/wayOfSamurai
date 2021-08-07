@@ -1,9 +1,5 @@
 import classes from './Navbar.module.css'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
     NavLink
 } from "react-router-dom";
 import React from "react";
@@ -18,6 +14,9 @@ const Navbar = props => {
                 </li>
                 <li>
                     <NavLink to={'/dialogs'} activeStyle={{color: 'gold'}}>Message</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/users'} activeStyle={{color: 'gold'}}>Users</NavLink>
                 </li>
                 <li>
                     <NavLink to={'/music'} activeStyle={{color: 'gold'}}>Music</NavLink>

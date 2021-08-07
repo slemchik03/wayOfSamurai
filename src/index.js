@@ -1,24 +1,19 @@
 import './reset.css';
 import './index.css';
-import Store from "./redux/state";
+import {store} from "./redux/redux-store";
 import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
 import React from "react";
+import {Provider} from "react-redux";
 
-const store = new Store()
 
-const reloadState = () => {
-    ReactDOM.render(
-        <BrowserRouter>
-            <App store={store}/>
-        </BrowserRouter>
-        ,
-        document.querySelector('#root')
-    )
-
-}
-
-store.setRender = reloadState
-
-reloadState()
+ReactDOM.render(
+    <BrowserRouter>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </BrowserRouter>
+    ,
+    document.querySelector('#root')
+)

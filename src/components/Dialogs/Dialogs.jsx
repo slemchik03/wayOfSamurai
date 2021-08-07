@@ -12,7 +12,7 @@ const Dialogs = props => {
             <div className={classes.dialogsItems}>
                 {
                     friends.map((value) => {
-                        return <DialogItem name={value.name} id={value.id}/>
+                        return <DialogItem key={value.id} name={value.name} id={value.id}/>
                     })
                 }
             </div>
@@ -21,7 +21,11 @@ const Dialogs = props => {
                 {
                     friends.map(value => {
                         return <Route path={`/dialogs/${value.id}`}
-                                      render={() => <Message message={props.currentMessage} dispatch={props.dispatch} value={value}/>}/>
+                                      render={() => <Message key={value.id} message={props.message}
+                                                             changeArea={props.changeArea}
+                                                             sendMessage={props.sendMessage}
+                                                             id={value.id}
+                                                             value={value}/>}/>
                     })
                 }
 

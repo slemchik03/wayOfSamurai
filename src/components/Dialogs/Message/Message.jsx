@@ -11,17 +11,10 @@ const Message = props => {
         return <p style={{color: 'red'}}>{`${props.value.name}: ` + value[1]}</p>
     }) : `Це початок вашої легендарної бесіди з ${props.value.name}`
 
-    const changeArea = e => props.dispatch({
-        type: 'CHANGE-CURRENT-MESSAGE', data: {
-            value: e.target.value
-        }
-    })
+    const changeMessage = (e) => props.changeArea(e.target.value)
 
-    const sendMessage = () => props.dispatch({
-        type: 'SEND-CURRENT-MESSAGE', data: {
-            id: props.value.id
-        }
-    })
+    const sendMessage = () => props.sendMessage(props.id)
+    console.log(props)
     return (
         <div className={classes.message}>
             <div>
@@ -29,7 +22,7 @@ const Message = props => {
             </div>
 
             <div>
-                <textarea onChange={changeArea} value={props.message} name="message" id="2" cols="14"
+                <textarea onChange={changeMessage} value={props.message} name="message" id="2" cols="14"
                           rows="4">2121</textarea>
             </div>
             <div>

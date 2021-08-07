@@ -1,8 +1,8 @@
-a {
-    color: #000000;
-    font-size: 19px;
+span {
+    cursor: pointer
 }
 .active {
     font-weight: bolder;
     color: mediumvioletred;
 }
+
