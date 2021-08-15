@@ -2,29 +2,31 @@ import {connect} from "react-redux";
 import {Users} from "./Users";
 import * as React from "react";
 import axios from "axios";
-import {setCurrentPage, setLoading, setUser} from "../../redux/users-reducer";
+import {setCurrentPage, setLoading, setPageSize, setTotalCurrentUser, setUser} from "../../redux/users-reducer";
 
 class UsersAPIContainer extends React.Component {
 
     componentDidMount() {
-        this.props.setLoading(true)
-        axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=${this.props.currentPage}`)
-            .then(response => {
-                    this.props.setLoading(false)
-                    this.props.setUser(response.data)
-
-                }
-            )
+        if (this.props.users.length === 0) {
+            this.props.setLoading(true)
+            axios.get(`https://reqres.in/api/users?page=${this.props.currentPage}`)
+                .then(response => {
+                        this.props.setUser(response.data.data)
+                        this.props.setTotalCurrentUser(response.data.total)
+                        this.props.setPageSize(response.data["per_page"])
+                        this.props.setLoading(false)
+                    }
+                )
+        }
     }
-
     setUser = (n) => {
         if (n !== this.props.currentPage) {
             this.props.setLoading(true)
             this.props.setCurrentPage(n)
-            axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=${n}`)
+            axios.get(`https://reqres.in/api/users?page=${n}`)
                 .then(response => {
+                    this.props.setUser(response.data.data)
                     this.props.setLoading(false)
-                    this.props.setUser(response.data)
                 })
         }
     }
@@ -55,4 +57,4 @@ const mapStateToProps = state => ({
 })
 
 export const UsersContainer = connect(mapStateToProps,
-    {setUser, setCurrentPage, setLoading})(UsersAPIContainer)
+    {setUser, setCurrentPage, setLoading, setPageSize, setTotalCurrentUser})(UsersAPIContainer)

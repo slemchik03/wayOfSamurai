@@ -1,0 +1,16 @@
+span {
+    cursor: pointer
+}
+.active {
+    font-weight: bolder;
+    color: mediumvioletred;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 870px;
+    flex-wrap: wrap;
+}
+
